@@ -1,0 +1,318 @@
+/* Estilos generales - Tech Theme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f1923;
+    color: #e0e0e0;
+    line-height: 1.6;
+    background-image: radial-gradient(circle at top right, rgba(28, 117, 188, 0.1), transparent 60%),
+                      radial-gradient(circle at bottom left, rgba(12, 232, 180, 0.05), transparent 50%);
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(25, 35, 45, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 230, 220, 0.15), 
+                0 0 0 1px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(86, 128, 176, 0.2);
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0ce8b4;
+    letter-spacing: 1px;
+    font-weight: 600;
+    position: relative;
+    text-shadow: 0 0 10px rgba(12, 232, 180, 0.3);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #0ce8b4, #00c2ff, #0ce8b4);
+    z-index: 1000;
+}
+
+/* Estilos del formulario - Tech Theme */
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #00c2ff;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: rgba(16, 24, 32, 0.7);
+    border: 1px solid rgba(0, 194, 255, 0.2);
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 0 0 0 rgba(0, 194, 255, 0);
+}
+
+input:hover, textarea:hover {
+    border-color: rgba(0, 194, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 194, 255, 0.1);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #0ce8b4;
+    background-color: rgba(16, 24, 32, 0.9);
+    box-shadow: 0 0 15px rgba(12, 232, 180, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #0ce8b4, #00c2ff);
+    color: #0f1923;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(12, 232, 180, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #00c2ff, #0ce8b4);
+    box-shadow: 0 5px 20px rgba(12, 232, 180, 0.4);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(12, 232, 180, 0.3);
+}
+
+button:disabled {
+    background: linear-gradient(90deg, #0ce8b4, #00c2ff);
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Indicador de campo requerido */
+.required {
+    color: #ff5252;
+    margin-left: 3px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Mensajes de error */
+.error-message {
+    color: #ff5252;
+    font-size: 13px;
+    margin-top: 5px;
+    min-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Estilos para campo con error */
+input.error, textarea.error {
+    border-color: #ff5252;
+    box-shadow: 0 0 5px rgba(255, 82, 82, 0.3);
+}
+
+/* Mensaje de respuesta */
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    display: none;
+    backdrop-filter: blur(5px);
+}
+
+.message.success {
+    background-color: rgba(12, 232, 180, 0.15);
+    color: #0ce8b4;
+    border: 1px solid rgba(12, 232, 180, 0.3);
+    display: block;
+}
+
+.message.error {
+    background-color: rgba(255, 82, 82, 0.15);
+    color: #ff5252;
+    border: 1px solid rgba(255, 82, 82, 0.3);
+    display: block;
+}
+
+/* Spinner de carga */
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.spinner {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(0, 194, 255, 0.1);
+    border-left-color: #0ce8b4;
+    border-top-color: #00c2ff;
+    border-radius: 50%;
+    animation: spinTech 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    box-shadow: 0 0 15px rgba(12, 232, 180, 0.3);
+}
+
+@keyframes spinTech {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+        border-width: 2px;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Tech futuristic elements */
+.container::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #0ce8b4;
+    border-right: 2px solid #0ce8b4;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid #00c2ff;
+    border-left: 2px solid #00c2ff;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0ce8b4, #00c2ff);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Efectos tech adicionales */
+body::after {
+    content: "";
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 200px;
+    height: 200px;
+    background-image: 
+        repeating-linear-gradient(rgba(0, 194, 255, 0.03) 0px, rgba(0, 194, 255, 0.03) 1px, transparent 1px, transparent 8px);
+    z-index: -1;
+    opacity: 0.3;
+    transform: rotate(15deg);
+}
+
+/* Detalles high-tech en los bordes del formulario */
+.form-group:nth-child(odd)::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    width: 5px;
+    height: 25px;
+    background-color: rgba(0, 194, 255, 0.1);
+}
+
+.form-group:nth-child(even)::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 30%;
+    width: 5px;
+    height: 25px;
+    background-color: rgba(12, 232, 180, 0.1);
+}
+
+/* Añadir barra de desplazamiento personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(16, 24, 32, 0.7);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #0ce8b4, #00c2ff);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #00c2ff, #0ce8b4);
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    input, textarea, button {
+        font-size: 14px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}
